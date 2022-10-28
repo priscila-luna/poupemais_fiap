@@ -20,25 +20,11 @@ public class InvestimentoDAO {
             stmt = conexao.prepareStatement(sql);
             stmt.setString(1, investimento.getDsInvestimento());
             stmt.setDouble(2, investimento.getVlrInvestimento());
-            
-            
-            //java.sql.Date dataInvestimento = new java.sql.Date(investimento.getDtInvestimento().getTimeInMillis());
-            //stmt.setDate(3, dataInvestimento);
-            
             Date dataInvestimento = Date.valueOf(formatter.format(investimento.getDtInvestimento()));
             stmt.setDate(3, dataInvestimento);
-            
             stmt.setInt(4, investimento.getIdUsuario());
-            
-            //java.sql.Date dataVencimento = new java.sql.Date(investimento.getDtVencimento().getTimeInMillis());
-            //stmt.setDate(5, dataVencimento);
-            
             Date dataVencimento = Date.valueOf(formatter.format(investimento.getDtVencimento()));
             stmt.setDate(5, dataVencimento);
-            
-            //java.sql.Date dataResgate = new java.sql.Date(investimento.getDtResgate().getTimeInMillis());       
-            //stmt.setDate(6, dataResgate);
-            
             Date dataResgate = Date.valueOf(formatter.format(investimento.getDtResgate()));
             stmt.setDate(6, dataResgate);
 
@@ -74,19 +60,10 @@ public class InvestimentoDAO {
             double vlrInvestimento = rs.getDouble("VLR_INVESTIMENTO");
 
             java.sql.Date dtInvestimento = rs.getDate("DT_INVESTIMENTO");
-            //Calendar dtInvestimento = Calendar.getInstance();
-            //dtInvestimento.setTimeInMillis(dt_Investimento.getTime());
 
             java.sql.Date dtVencimento = rs.getDate("DT_INVESTIMENTO");
-            //Calendar dtVencimento = Calendar.getInstance();
-            //dtVencimento.setTimeInMillis(dt_Vencimento.getTime());
-
             java.sql.Date dtResgate = rs.getDate("DT_RESGATE");
-            //Calendar dtResgate = Calendar.getInstance();
-            //dtResgate.setTimeInMillis(dt_Resgate.getTime());
-
             int idUsuario = rs.getInt("ID_USUARIO");
-
             Investimento investimento = new Investimento(codigo, dsInvestimento, vlrInvestimento, dtInvestimento, dtVencimento, dtResgate, idUsuario);
             lista.add(investimento);
             }
