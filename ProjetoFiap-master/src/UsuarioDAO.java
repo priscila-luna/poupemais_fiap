@@ -26,7 +26,7 @@ public class UsuarioDAO {
             Date dtNascimento = Date.valueOf(formatter.format(usuario.getDtNascimento()));
             stmt.setDate(3, dtNascimento);
             stmt.setString(4, usuario.getSenha());
-            stmt.setInt(5, usuario.getNmrCelular());
+            stmt.setString(5, usuario.getNmrCelular());
             stmt.setString(6, usuario.getCpfUsuario());
             stmt.executeUpdate();
         } catch (SQLException e) {
@@ -50,7 +50,7 @@ public class UsuarioDAO {
 	            String dsEmail = rs.getString("DS_EMAIL");
 	            java.sql.Date dtNascimento = rs.getDate("DT_NASCIMENTO");
 	            String senha = rs.getString("SENHA");
-	            int nmrCelular = rs.getInt("NMR_CELULAR");
+	            String nmrCelular = rs.getString("NMR_CELULAR");
 	            String cpfUsuario = rs.getString("CPF_USUARIO");
 	            usuario = new Usuario(idUsuario, nmUsuario, dsEmail, dtNascimento, senha, nmrCelular, cpfUsuario);
 
@@ -85,7 +85,7 @@ public class UsuarioDAO {
                 String dsEmail = rs.getString("DS_EMAIL");
                 Date dtNascimento = rs.getDate("DT_NASCIMENTO");
                 String senha = rs.getString("SENHA");
-                int nmrCelular = rs.getInt("NMR_CELULAR");
+                String nmrCelular = rs.getString("NMR_CELULAR");
                 String cpfUsuario = rs.getString("CPF_USUARIO");
 
                 Usuario usuario = new Usuario(idUsuario, nmUsuario, dsEmail, dtNascimento, senha, nmrCelular, cpfUsuario);
@@ -93,6 +93,14 @@ public class UsuarioDAO {
             }
         } catch (SQLException e){
             e.printStackTrace();
+        } finally {
+            try {
+                stmt.close();
+                rs.close();
+                conexao.close();
+            } catch (SQLException e){
+                e.printStackTrace();
+            }
         }
         return usuarios;
     }

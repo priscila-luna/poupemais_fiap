@@ -6,10 +6,10 @@ public class Usuario {
     private String dsEmail;
     private Date dtNascimento;
     private String senha;
-    private int nmrCelular;
+    private String nmrCelular;
     private String cpfUsuario;
 
-    public Usuario(int idUsuario, String nmUsuario, String dsEmail, Date dtNascimento, String senha, int nmrCelular, String cpfUsuario) {
+    public Usuario(int idUsuario, String nmUsuario, String dsEmail, Date dtNascimento, String senha, String nmrCelular, String cpfUsuario) {
         this.idUsuario = idUsuario;
         this.nmUsuario = nmUsuario;
         this.dsEmail = dsEmail;
@@ -60,11 +60,11 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public int getNmrCelular() {
+    public String getNmrCelular() {
         return nmrCelular;
     }
 
-    public void setNmrCelular(int nmrCelular) {
+    public void setNmrCelular(String nmrCelular) {
         this.nmrCelular = nmrCelular;
     }
 

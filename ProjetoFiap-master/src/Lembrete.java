@@ -1,19 +1,21 @@
 import java.util.Date;
-import java.time.LocalDateTime;
 
 public class Lembrete {
     private int idLembrete;
     private Date dtLembrete;
-    private LocalDateTime hrLembrete;
+    private Date hrLembrete;
     private String dsLembrete;
     private String tpLembrete;
-    public Lembrete(int idLembrete, Date dtLembrete, LocalDateTime hrlembrete, String dsLembrete, String tpLembrete) {
+    private int idUsuario;
+    
+    public Lembrete(int idLembrete, Date dtLembrete, Date hrlembrete, String dsLembrete, String tpLembrete, int idUsuario) {
         this.setIdLembrete(idLembrete);
         this.setDtLembrete(dtLembrete);
         this.setHrLembrete(hrLembrete);
         this.setDsLembrete(dsLembrete);
-        this.setTpLembrete(tpLembrete);
-    }
+        this.setTpLembrete(tpLembrete); 
+        this.setIdUsuario(idUsuario);
+    } 
     public void setIdLembrete(int idLembrete){
         this.idLembrete = idLembrete;
     }
@@ -22,7 +24,7 @@ public class Lembrete {
         this.dtLembrete = dtLembrete;
     }
 
-    public void setHrLembrete(LocalDateTime hrLembrete){
+    public void setHrLembrete(Date hrLembrete){
         this.hrLembrete = hrLembrete;
     }
     public void setDsLembrete(String dsLembrete){
@@ -32,16 +34,19 @@ public class Lembrete {
     public void setTpLembrete(String tpLembrete){
         this.tpLembrete = tpLembrete;
     }
+    public void setIdUsuario(int idUsuario){
+        this.idUsuario = idUsuario;
+    }
 
     public int getIdLembrete(){
         return idLembrete;
     }
 
-    public Date getDataLembrete(){
+    public Date getDtLembrete(){
         return dtLembrete;
     }
 
-    public LocalDateTime getHoraLembrete(){
+    public Date getHrLembrete(){
         return hrLembrete;
     }
 
@@ -52,6 +57,11 @@ public class Lembrete {
     public String getTpLembrete(){
         return tpLembrete;
     }
+    
+    public int getIdUsuario(){
+        return idUsuario;
+    }
+
 
     @Override
     public String toString(){
@@ -60,7 +70,7 @@ public class Lembrete {
                         ", dataLembrete='" + dtLembrete + '\'' +
                         ", horaLembrete='" + hrLembrete +
                         ", descricaoLembrete=" + dsLembrete +
-                        ", tipoLembrete=" + tpLembrete + '\''
+                        ", tipoLembrete=" + tpLembrete + "idUsuario=" + idUsuario + '\''
                 ;
 
     }

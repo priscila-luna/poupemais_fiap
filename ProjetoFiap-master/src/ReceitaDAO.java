@@ -4,23 +4,23 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DespesaDAO {
+public class ReceitaDAO {
 	private Connection conexao;
 	
-	public void Insert(Despesa despesa) {
+	public void Insert(Receita receita) {
 		PreparedStatement stmt = null;
 		Format formatter = new SimpleDateFormat("yyy-MM-dd");
 		
 		try {
 			conexao = Connector.conectar();
-			String sql = "INSERT INTO T_DESPESA (DS_DESPESA, VLR_DESPESA, DT_DESPESA, TP_DESPESA, ID_USUARIO) VALUES (?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO T_RECEITA (DS_RECEITA, VLR_RECEITA, DT_RECEITA, TP_RECEITA, ID_USUARIO) VALUES (?, ?, ?, ?, ?)";
 			stmt = conexao.prepareStatement(sql);
-			stmt.setString(1, despesa.getDsDespesa());
-			stmt.setDouble(2, despesa.getVlrDespesa());
-            Date dataDespesa = Date.valueOf(formatter.format(despesa.getDtDespesa()));
-            stmt.setDate(3, dataDespesa);
-            stmt.setString(4, despesa.getDsDespesa());
-            stmt.setInt(5, despesa.getIdUsuario() );
+			stmt.setString(1, receita.getDsReceita());
+			stmt.setDouble(2, receita.getVlrReceita());
+            Date dtReceita = Date.valueOf(formatter.format(receita.getDataReceita()));
+            stmt.setDate(3, dtReceita);
+            stmt.setString(4, receita.getDsReceita());
+            stmt.setInt(5, receita.getIdUsuario() );
             
             stmt.executeUpdate();
 		} catch (SQLException e){
@@ -35,27 +35,28 @@ public class DespesaDAO {
 		}
 	}
 	
-	public List<Despesa> getAll(){
+	public List<Receita> getAll(){
 		PreparedStatement stmt =null;
 		ResultSet rs = null;
-		List<Despesa> listaDespesa = new ArrayList<Despesa>();
+		List<Receita> listaReceita = new ArrayList<Receita>();
 		
 		try {
 			conexao = Connector.conectar();
 			
-			String sql = "SELECT * T_DESPESA";
+			String sql = "SELECT * T_RECEITA";
 			stmt = conexao.prepareStatement(sql);
 			rs = stmt.executeQuery();
 			
 			while (rs.next()) {
-				int idDespesa = rs.getInt("ID_DESPESA");
-				String dsDespesa = rs.getString("DS_DESPESA");
-				double vlrDespesa = rs.getInt("VLR_DESPESA");
-				java.sql.Date dtDespesa = rs.getDate("DT_DESPESA");
-				String tpDespesa = rs.getString("TP_DESPESA");
+				int idReceita = rs.getInt("ID_RECEITA");
+				String dsReceita = rs.getString("DS_RECEITA");
+				double vlrReceita = rs.getInt("VLR_RECEITA");
+				java.sql.Date dtReceita = rs.getDate("DT_RECEITA");
+				String tpReceita = rs.getString("TP_RECEITA");
 				int idUsuario = rs.getInt("ID_USUARIO");
-				Despesa despesa = new Despesa(idDespesa, dsDespesa, vlrDespesa, dtDespesa, tpDespesa, idUsuario);
-				listaDespesa.add(despesa);
+				Receita receita = new Receita(idReceita, dsReceita, vlrReceita, dtReceita, tpReceita, idUsuario);
+				listaReceita.add(receita);
+
 			}
 	} catch (SQLException e) {
 		e.printStackTrace();
@@ -68,6 +69,6 @@ public class DespesaDAO {
               e.printStackTrace();
           }
       }
-      return listaDespesa;
+      return listaReceita;
   }
 }

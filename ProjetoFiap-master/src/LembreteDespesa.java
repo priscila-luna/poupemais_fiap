@@ -10,6 +10,6 @@ public class LembreteDespesa extends Lembrete {
 
     public void EditarDescricao(String novaDescricao){
         this.setDsLembrete(novaDescricao);
-    }
+    } 
 
 }
