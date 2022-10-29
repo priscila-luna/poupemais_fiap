@@ -75,3 +75,4 @@ public class Investimento {
         this.idUsuario = idUsuario;
     }
 }
+

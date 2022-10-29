@@ -1,68 +1,69 @@
-import java.time.LocalDate;
+import java.util.Date;
+
 
 public class Receita {
     private int idReceita;
-    private String descricaoReceita;
-    private double valorReceita;
-    private LocalDate dataReceita;
-    private String tipoReceita;
+    private String dsReceita;
+    private double vlrReceita;
+    private Date dtReceita;
+    private String tpReceita;
 
-    public Receita(int idReceita, String descricaoReceita, double valorReceita, LocalDate dataReceita, String tipoReceita) {
+    public Receita(int idReceita, String dsReceita, double vlrReceita, Date dtReceita, String tpReceita) {
         this.setIdReceita(idReceita);
-        this.setDescricaoReceita(descricaoReceita);
-        this.setValorReceita(valorReceita);
-        this.setDataReceita(dataReceita);
-        this.setTipoReceita(tipoReceita);
+        this.setDsReceita(dsReceita);
+        this.setVlrReceita(vlrReceita);
+        this.setDtReceita(dtReceita);
+        this.setTpReceita(tpReceita);
     }
 
     public void setIdReceita(int idReceita) {
         this.idReceita = idReceita;
     }
 
-    public void setDescricaoReceita(String descricaoReceita) {
-        this.descricaoReceita = descricaoReceita;
+    public void setDsReceita(String dsReceita) {
+        this.dsReceita = dsReceita;
     }
 
-    public void setValorReceita(double valorReceita) {
-        this.valorReceita = valorReceita;
+    public void setVlrReceita(double vlrReceita) {
+        this.vlrReceita = vlrReceita;
     }
 
-    public void setDataReceita(LocalDate dataReceita) {
-        this.dataReceita = dataReceita;
+    public void setDtReceita(Date dtReceita) {
+        this.dtReceita = dtReceita;
     }
 
-    public void setTipoReceita(String tipoReceita) {
-        this.tipoReceita = tipoReceita;
+    public void setTpReceita(String tpReceita) {
+        this.tpReceita = tpReceita;
     }
 
     public int getIdReceita() {
         return idReceita;
     }
 
-    public String getDescricaoReceita() {
-        return descricaoReceita;
+    public String getDsReceita() {
+        return dsReceita;
     }
 
-    public double getValorReceita() {
-        return valorReceita;
+    public double getVlrReceita() {
+        return vlrReceita;
     }
 
-    public LocalDate getDataReceita() {
-        return dataReceita;
+    public Date getDataReceita() {
+        return dtReceita;
     }
 
     public String getTipoReceita() {
-        return tipoReceita;
+        return tpReceita;
     }
 
     @Override
     public String toString() {
         return
                 "idReceita=" + idReceita +
-                        ", descricaoReceita='" + descricaoReceita + '\'' +
-                        ", valorReceita=" + valorReceita +
-                        ", dataReceita=" + dataReceita +
-                        ", tipoReceita='" + tipoReceita + '\''
+                        ", descricaoReceita='" + dsReceita + '\'' +
+                        ", valorReceita=" + vlrReceita +
+                        ", dataReceita=" + dtReceita +
+                        ", tipoReceita='" + tpReceita + '\''
                 ;
     }
 }

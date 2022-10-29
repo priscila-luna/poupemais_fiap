@@ -1,17 +1,15 @@
-import java.time.LocalDate;
-import java.util.Calendar;
 import java.util.Date;
 
 public class Usuario {
     private int idUsuario;
     private String nmUsuario;
     private String dsEmail;
-    private String dtNascimento;
+    private Date dtNascimento;
     private String senha;
     private int nmrCelular;
     private String cpfUsuario;
 
-    public Usuario(int idUsuario, String nmUsuario, String dsEmail, String dtNascimento, String senha, int nmrCelular, String cpfUsuario) {
+    public Usuario(int idUsuario, String nmUsuario, String dsEmail, Date dtNascimento, String senha, int nmrCelular, String cpfUsuario) {
         this.idUsuario = idUsuario;
         this.nmUsuario = nmUsuario;
         this.dsEmail = dsEmail;
@@ -46,11 +44,11 @@ public class Usuario {
         this.dsEmail = dsEmail;
     }
 
-    public String getDtNascimento() {
+    public Date getDtNascimento() {
         return dtNascimento;
     }
 
-    public void setDtNascimento(String dtNascimento) {
+    public void setDtNascimento(Date dtNascimento) {
         this.dtNascimento = dtNascimento;
     }
 

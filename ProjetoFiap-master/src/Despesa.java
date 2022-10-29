@@ -1,20 +1,22 @@
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Despesa {
 
     private int idDespesa;
-    private String descricaoDespesa;
-    private double valorDespesa;
-    private LocalDate dataDespesa;
-    private String tipoDespesa;
+    private String dsDespesa;
+    private double vlrDespesa;
+    private Date dtDespesa;
+    private String tpDespesa;
+    private int idUsuario;
 
 
-    public Despesa(int idDespesa, String descricaoDespesa, double valorDespesa, LocalDate dataDespesa, String tipoDespesa) {
+    public Despesa(int idDespesa, String dsDespesa, double vlrDespesa, Date dtDespesa, String tpDespesa, int idUsuario) {
         this.setIdDespesa(idDespesa);
-        this.setDescricaoDespesa(descricaoDespesa);
-        this.setValorDespesa(valorDespesa);
-        this.setDataDespesa(dataDespesa);
-        this.setTipoDespesa(tipoDespesa);
+        this.setDsDespesa(dsDespesa);
+        this.setVlrDespesa(vlrDespesa);
+        this.setDtDespesa(dtDespesa);
+        this.setTpDespesa(tpDespesa);
+        this.setIdUsuario(idUsuario);
     }
 
 
@@ -27,36 +29,44 @@ public class Despesa {
         this.idDespesa = idDespesa;
     }
 
-    public String getDescricaoDespesa() {
-        return descricaoDespesa;
+    public String getDsDespesa() {
+        return dsDespesa;
     }
 
-    public void setDescricaoDespesa(String descricaoDespesa) {
-        this.descricaoDespesa = descricaoDespesa;
+    public void setDsDespesa(String dsoDespesa) {
+        this.dsDespesa = dsDespesa;
     }
 
-    public double getValorDespesa() {
-        return valorDespesa;
+    public double getVlrDespesa() {
+        return vlrDespesa;
     }
 
-    public void setValorDespesa(double valorDespesa) {
-        this.valorDespesa = valorDespesa;
+    public void setVlrDespesa(double vlrDespesa) {
+        this.vlrDespesa = vlrDespesa;
     }
 
-    public LocalDate getDataDespesa() {
-        return dataDespesa;
+    public Date getDtDespesa() {
+        return dtDespesa;
     }
 
-    public void setDataDespesa(LocalDate dataDespesa) {
-        this.dataDespesa = dataDespesa;
+    public void setDtDespesa(Date dtDespesa) {
+        this.dtDespesa = dtDespesa;
     }
 
-    public String getTipoDespesa() {
-        return tipoDespesa;
+    public String getTpDespesa() {
+        return tpDespesa;
     }
 
-    public void setTipoDespesa(String tipoDespesa) {
-        this.tipoDespesa = tipoDespesa;
+    public void setTpDespesa(String tpDespesa) {
+        this.tpDespesa = tpDespesa;
+    }
+    
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
 
@@ -64,10 +74,12 @@ public class Despesa {
     public String toString() {
         return
                 "idDespesa=" + idDespesa +
-                        ", descricaoDespesa='" + descricaoDespesa + '\'' +
-                        ", valorDespesa=" + valorDespesa +
-                        ", dataDespesa=" + dataDespesa +
-                        ", tipoDespesa='" + tipoDespesa + '\''
+                        ", dsDespesa='" + dsDespesa + '\'' +
+                        ", vlrDespesa=" + vlrDespesa +
+                        ", dtDespesa=" + dtDespesa +
+                        ", tpDespesa='" + tpDespesa + 
+                        ", IdUsuario='" + idUsuario +
+                        '\''
                 ;
     }
 

@@ -1,66 +1,66 @@
-import java.time.LocalDate;
+import java.util.Date;
 import java.time.LocalDateTime;
 
 public class Lembrete {
     private int idLembrete;
-    private LocalDate dataLembrete;
-    private LocalDateTime horaLembrete;
-    private String descricaoLembrete;
-    private String tipoLembrete;
-    public Lembrete(int idLembrete, LocalDate dataLembrete, LocalDateTime horaLembrete, String descricaoLembrete, String tipoLembrete) {
+    private Date dtLembrete;
+    private LocalDateTime hrLembrete;
+    private String dsLembrete;
+    private String tpLembrete;
+    public Lembrete(int idLembrete, Date dtLembrete, LocalDateTime hrlembrete, String dsLembrete, String tpLembrete) {
         this.setIdLembrete(idLembrete);
-        this.setDataLembrete(dataLembrete);
-        this.setHoraLembrete(horaLembrete);
-        this.setDescricaoLembrete(descricaoLembrete);
-        this.setTipoLembrete(tipoLembrete);
+        this.setDtLembrete(dtLembrete);
+        this.setHrLembrete(hrLembrete);
+        this.setDsLembrete(dsLembrete);
+        this.setTpLembrete(tpLembrete);
     }
     public void setIdLembrete(int idLembrete){
         this.idLembrete = idLembrete;
     }
 
-    public void setDataLembrete(LocalDate dataLembrete){
-        this.dataLembrete = dataLembrete;
+    public void setDtLembrete(Date dtLembrete){
+        this.dtLembrete = dtLembrete;
     }
 
-    public void setHoraLembrete(LocalDateTime horaLembrete){
-        this.horaLembrete = horaLembrete;
+    public void setHrLembrete(LocalDateTime hrLembrete){
+        this.hrLembrete = hrLembrete;
     }
-    public void setDescricaoLembrete(String descricaoLembrete){
-        this.descricaoLembrete = descricaoLembrete;
+    public void setDsLembrete(String dsLembrete){
+        this.dsLembrete = dsLembrete;
     }
 
-    public void setTipoLembrete(String tipoLembrete){
-        this.tipoLembrete = tipoLembrete;
+    public void setTpLembrete(String tpLembrete){
+        this.tpLembrete = tpLembrete;
     }
 
     public int getIdLembrete(){
         return idLembrete;
     }
 
-    public LocalDate getDataLembrete(){
-        return dataLembrete;
+    public Date getDataLembrete(){
+        return dtLembrete;
     }
 
     public LocalDateTime getHoraLembrete(){
-        return horaLembrete;
+        return hrLembrete;
     }
 
-    public String getDescricaoLembrete(){
-        return descricaoLembrete;
+    public String getDsLembrete(){
+        return dsLembrete;
     }
 
-    public String getTipoLembrete(){
-        return tipoLembrete;
+    public String getTpLembrete(){
+        return tpLembrete;
     }
 
     @Override
     public String toString(){
         return
                 "idLembrete=" + idLembrete +
-                        ", dataLembrete='" + dataLembrete + '\'' +
-                        ", horaLembrete='" + horaLembrete +
-                        ", descricaoLembrete=" + descricaoLembrete +
-                        ", tipoLembrete=" + tipoLembrete + '\''
+                        ", dataLembrete='" + dtLembrete + '\'' +
+                        ", horaLembrete='" + hrLembrete +
+                        ", descricaoLembrete=" + dsLembrete +
+                        ", tipoLembrete=" + tpLembrete + '\''
                 ;
 
     }
